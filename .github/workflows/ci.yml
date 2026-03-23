@@ -22,7 +22,7 @@ jobs:
           cache-dependency-path: 1-DevOps/idempotweet/yarn.lock
 
       - name: Enable corepack
-        uses: corepack enable
+        run: corepack enable
         working-directory: .
 
       - name: Install dependencies
