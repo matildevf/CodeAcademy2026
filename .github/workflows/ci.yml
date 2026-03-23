@@ -14,15 +14,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Enable corepack
+        run: corepack enable
+        working-directory: .
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - name: Enable corepack
-        run: corepack enable
-        working-directory: .
+          cache: yarn
+          cache-dependency-path: 1-DevOps/idempotweet/yarn.lock
 
       - name: Install dependencies
         run: yarn install --immutable
