@@ -1,13 +1,12 @@
-name: pr
+name: pr-action
 on:
   pull_request:
     paths:
       - 1-DevOps/idempotweet/**
       - .github/workflows/**
-  workflow_call:
-    
+  workflow_call:  
 jobs:
-  ci:
+  ci-job:
     runs-on: ${{ vars.RUNNER || 'self-hosted' }}
     defaults:
       run:
@@ -43,3 +42,4 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
+          
