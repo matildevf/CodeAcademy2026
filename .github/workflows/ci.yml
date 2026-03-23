@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 1-DevOps/idempotweet/**
+      - .github/workflows/**
   workflow_call:
     
 jobs:
@@ -12,7 +13,8 @@ jobs:
       run:
         working-directory: 1-DevOps/idempotweet
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
